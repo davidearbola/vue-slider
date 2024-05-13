@@ -33,6 +33,7 @@ createApp({
 				},
 			],
 			imgActive: 0,
+			myTimer: null,
 		};
 	},
 	methods: {
@@ -56,9 +57,22 @@ createApp({
 				this.imgActive = 4;
 			}
 		},
+		thumbSlide(index) {
+			this.imgActive = index;
+		},
+		avviaTimer() {
+			this.myTimer = setInterval(() => {
+				this.next();
+			}, 1000);
+		},
+		stopTimer() {
+			clearInterval(this.myTimer);
+		},
 	},
 	mounted() {
-		console.log(this.slide);
+		this.myTimer = setInterval(() => {
+			this.next();
+		}, 3000);
 	},
 	// monto VUE nel div app
 }).mount("#app");
