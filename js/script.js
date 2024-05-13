@@ -42,6 +42,20 @@ createApp({
 		imgActiveThumb(index) {
 			return index == this.imgActive ? `active` : ``;
 		},
+		next() {
+			if (this.imgActive < 4) {
+				this.imgActive++;
+			} else {
+				this.imgActive = 0;
+			}
+		},
+		prev() {
+			if (this.imgActive > 0) {
+				this.imgActive--;
+			} else {
+				this.imgActive = 4;
+			}
+		},
 	},
 	mounted() {
 		console.log(this.slide);
