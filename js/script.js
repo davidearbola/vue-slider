@@ -39,6 +39,9 @@ createApp({
 		imgActiveSlides(index) {
 			return index == this.imgActive ? `block` : ``;
 		},
+		imgActiveThumb(index) {
+			return index == this.imgActive ? `active` : ``;
+		},
 	},
 	mounted() {
 		console.log(this.slide);
