@@ -11,25 +11,18 @@
 </head>
 
 <body>
-
     <div id="app">
-
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
-
-                <div class="item">
-                    <img src="img/01.webp" alt="Spiderman" />
+                <div v-for="elemento, i in slide" class="slide item" :class="imgActiveSlides(i)">
+                    <img :src="elemento.image" :alt="elemento.title" />
                     <div class="text">
-                        <h3>Spiderman</h3>
+                        <h3>{{elemento.title}}</h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
+                            {{elemento.text}}
                         </p>
                     </div>
                 </div>
-
                 <div class="thumbs">
                     <div class="prev"></div>
                     <div class="next"></div>
@@ -49,12 +42,9 @@
                         <img src="img/05.webp" alt="Avengers" />
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
     <script src="./js/script.js"></script>
 </body>
 
