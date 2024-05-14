@@ -14,7 +14,7 @@
     <div id="app">
         <div class="container">
             <div @mouseover="stopTimer()" @mouseleave="avviaTimer()" class="slider-wrapper" tabindex="0">
-                <div v-for="elemento, i in slide" class="slide item" :class="imgActiveSlides(i)">
+                <div v-for="elemento, i in slide" class="slide item" :class="{block: (i == imgActive)}">
                     <img :src="elemento.image" :alt="elemento.title" />
                     <div class="text">
                         <h3>{{elemento.title}}</h3>
@@ -26,7 +26,7 @@
                 <div class="thumbs">
                     <div @click="prev()" class="prev"></div>
                     <div @click="next()" class="next"></div>
-                    <div v-for="elemento, i in slide" class="thumb" :class="imgActiveThumb(i)">
+                    <div v-for="elemento, i in slide" class="thumb" :class="{active: (i == imgActive)}">
                         <img @click="thumbSlide(i)" :src="elemento.image" :alt="elemento.title" />
                     </div>
                 </div>

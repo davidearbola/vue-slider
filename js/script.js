@@ -37,12 +37,6 @@ createApp({
 		};
 	},
 	methods: {
-		imgActiveSlides(index) {
-			return index == this.imgActive ? `block` : ``;
-		},
-		imgActiveThumb(index) {
-			return index == this.imgActive ? `active` : ``;
-		},
 		next() {
 			if (this.imgActive < this.slide.length - 1) {
 				this.imgActive++;
