@@ -51,9 +51,7 @@ createApp({
 			this.imgActive = index;
 		},
 		avviaTimer() {
-			this.myTimer = setInterval(() => {
-				this.next();
-			}, 3000);
+			this.myTimer = setInterval(this.next, 3000);
 		},
 		stopTimer() {
 			clearInterval(this.myTimer);
