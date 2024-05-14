@@ -60,9 +60,7 @@ createApp({
 		},
 	},
 	mounted() {
-		this.myTimer = setInterval(() => {
-			this.next();
-		}, 3000);
+		this.avviaTimer();
 	},
 	// monto VUE nel div app
 }).mount("#app");
