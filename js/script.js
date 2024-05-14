@@ -38,18 +38,14 @@ createApp({
 	},
 	methods: {
 		next() {
-			if (this.imgActive < this.slide.length - 1) {
-				this.imgActive++;
-			} else {
-				this.imgActive = 0;
-			}
+			return this.imgActive < this.slide.length - 1
+				? this.imgActive++
+				: (this.imgActive = 0);
 		},
 		prev() {
-			if (this.imgActive > 0) {
-				this.imgActive--;
-			} else {
-				this.imgActive = this.slide.length - 1;
-			}
+			return this.imgActive > 0
+				? this.imgActive--
+				: (this.imgActive = this.slide.length - 1);
 		},
 		thumbSlide(index) {
 			this.imgActive = index;
