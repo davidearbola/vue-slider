@@ -44,7 +44,7 @@ createApp({
 			return index == this.imgActive ? `active` : ``;
 		},
 		next() {
-			if (this.imgActive < 4) {
+			if (this.imgActive < this.slide.length - 1) {
 				this.imgActive++;
 			} else {
 				this.imgActive = 0;
@@ -54,7 +54,7 @@ createApp({
 			if (this.imgActive > 0) {
 				this.imgActive--;
 			} else {
-				this.imgActive = 4;
+				this.imgActive = this.slide.length - 1;
 			}
 		},
 		thumbSlide(index) {
@@ -63,7 +63,7 @@ createApp({
 		avviaTimer() {
 			this.myTimer = setInterval(() => {
 				this.next();
-			}, 1000);
+			}, 3000);
 		},
 		stopTimer() {
 			clearInterval(this.myTimer);
